@@ -1,0 +1,10 @@
+/* Here you place classes that ONLY apply to the home page */
+.aboutMe {
+    font-size: 1.4em;
+    font-weight: bold;
+  }
+  #currentFlower {
+      font-size: 1.6em;
+      font-weight: bold;
+      color: blueviolet;
+  }

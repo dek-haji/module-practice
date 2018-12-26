@@ -1,0 +1,41 @@
+/*
+    Purpose:
+    This file contains all code related to manipulating,
+    or accessing the main flower database. Code not serving
+    this purpose should not be added to this file.
+*/
+
+const FlowerDatabase = [
+    {
+      "id": 1,
+      "commonName": "Rose",
+      "species": ["Hulthemia", "Hesperrhodos", "Platyrhodon", "Gymnocarpae"]
+    },
+    {
+      "id": 2,
+      "commonName": "Daisy",
+      "species": ["Aster breweri", "Aster chezuensis", "Aster protoflorian", "Gymnocarpae"]
+    },
+    {
+        "id": 3,
+        "commonName": "Dek",
+        "species": ["nacnac", "luubaani", "shukulaatina"]
+    }
+];
+const getFlower = function (id) {
+    return FlowerDatabase.find(flower => flower.id === id)
+}
+const saveFlower = function (flower) {
+    if (flower.commonName.length > 0
+        && flower.hasOwnProperty("id")
+        && flower.hasOwnProperty("commonName")
+        && flower.hasOwnProperty("species")
+        && (FlowerDatabase.find(f => f.id ===flower.id) || null) === null)
+        {
+            FlowerDatabase.push(flower)
+        }else {
+            throw "flower not saved. Missing, or incorrect, required properties." 
+     }
+ }
+        
+        
